@@ -1,11 +1,11 @@
 {
   "name": "air.drone",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
-    "start": "nodemon app.js"
+  	"start": "nodemon app.js"
   },
   "dependencies": {
-    "ar-drone": "1.4.23"		
+    "ar-drone": "~0.3.2"		
   }
 }
