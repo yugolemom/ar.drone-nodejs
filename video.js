@@ -1,7 +1,7 @@
 var arDrone = require('ar-drone');
 var http    = require('http');
 
-console.log('Connecting png stream ...');
+console.log('Conectando ao Drone ...');
 
 var pngStream = arDrone.createClient().getPngStream();
 
@@ -15,7 +15,7 @@ pngStream
 var server = http.createServer(function(req, res) {
   if (!lastPng) {
     res.writeHead(503);
-    res.end('Did not receive any png data yet.');
+    res.end('Erro: Nao estamos recebendo nada!.');
     return;
   }
 
@@ -24,5 +24,7 @@ var server = http.createServer(function(req, res) {
 });
 
 server.listen(8080, function() {
-  console.log('Serving latest png on port 8080 ...');
+  console.log('Servico rodando na porta 8080..');
+  console.log('http://localhost:8080');
+  
 });
